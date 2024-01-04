@@ -1,4 +1,4 @@
-name: hola-mundo #Nombre del workflow
+name: PAso 6 - hola-mundo github actions #Nombre del workflow
 on: [push] #evento que lo activará
 jobs: #Definición de los jobs
   hola-mundo: #Nombre del job
