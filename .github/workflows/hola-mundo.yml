@@ -8,5 +8,5 @@ jobs: #Definición de los jobs
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Run home-mundo
-        run: node ../home-mundo.js
+      - name: Run hola-mundo
+        run: node ../hola-mundo.js
