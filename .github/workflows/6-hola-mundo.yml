@@ -15,4 +15,4 @@ jobs: #Definición de los jobs
         run: npm install
 
       - name: Ejecutar script
-        run: cd /home/runner/work/tes-github-actions/node hola-mundo.js
+        run: node ../hola-mundo.js
