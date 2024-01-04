@@ -6,12 +6,12 @@ jobs: #Definición de los jobs
     steps: #Lista de steps del job hola-mundo
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Instalar Node.js
       - uses: actions/setup-node@v3
         with:
           node-version: 14
 
-      - name: Install dependencies
+      - name: Instalar dependencies
         run: npm install
 
       - name: Ejecutar script
