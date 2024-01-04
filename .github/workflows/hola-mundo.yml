@@ -9,4 +9,4 @@ jobs: #Definición de los jobs
         with:
           node-version: 18
       - name: Run hola-mundo
-        run: node ../hola-mundo.js
+        run: node ../../hola-mundo.js
