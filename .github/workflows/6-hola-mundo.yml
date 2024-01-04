@@ -1,5 +1,7 @@
 name: PAso 6 - hola-mundo github actions #Nombre del workflow
-on: [push] #evento que lo activará
+on: #evento que lo activará
+  push:
+    branches: ["aprendiendo-github-actions"]
 jobs: #Definición de los jobs
   hola-mundo: #Nombre del job
     runs-on: ubuntu-latest #Maquina en la que correrá
