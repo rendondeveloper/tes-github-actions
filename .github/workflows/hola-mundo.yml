@@ -8,5 +8,7 @@ jobs: #Definición de los jobs
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install dependencies
+        run: npm install
       - name: Run hola-mundo
-        run: node ../hola-mundo.js
+        run: cd /home/runner/work/tes-github-actions/node hola-mundo.js
