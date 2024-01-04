@@ -5,8 +5,14 @@ jobs: #Definición de los jobs
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - uses: actions/checkout@v3
+
+      - name: Setup Node.js
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - name: Run hola-mundo
-        run: node ../hola-mundo.js
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Ejecutar script
+        run: cd /home/runner/work/tes-github-actions/node hola-mundo.js
