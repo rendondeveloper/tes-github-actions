@@ -1,5 +1,5 @@
-name: actions-three-triggers #Nombre del workflow
-run-name: Aprendiendo a poner varios triggers
+name: Aprendiendo a poner varios triggers name #Nombre del workflow
+run-name: Aprendiendo a poner varios triggers name-runner
 on:
   push:
     branches:
