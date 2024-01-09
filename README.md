@@ -132,7 +132,7 @@ jobs:
   TBD-step-2-notes.
 -->
 
-<details id=2 open>
+<details id=2>
 <summary><h2>Paso 2: Conoce los principales Triggers</h2></summary>
 
 _¡Creaste tu primer Workflow! :tada:_
