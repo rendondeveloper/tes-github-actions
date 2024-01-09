@@ -3,14 +3,14 @@ run-name: Aprendiendo a poner varios triggers name-runner
 on:
   push:
     branches:
-      - "main"
-      - "feature/**"
-      - "bugfixing/**"
+      - 'main'
+      - 'feature/**'
+      - 'bugfixing/**'
   pull_request:
     branches:
-      - "main"
-      - "feature/**"
-      - "bugfixing/**"
+      - 'main'
+      - 'feature/**'
+      - 'bugfixing/**'
   issues:
     types:
       - opened
