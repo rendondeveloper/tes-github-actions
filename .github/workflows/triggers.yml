@@ -11,6 +11,8 @@ on:
       - 'main'
       - 'feature/**'
       - 'bugfixing/**'
+    paths:
+      - '**.kt'
   issues:
     types:
       - opened
