@@ -20,7 +20,7 @@ _Aprende los conceptos básicos para crear tu primer flujo de CI/CD para tus pro
   Do not use quotes on the <details> tag attributes.
 -->
 
-<details id=0>
+<details id=1 open>
 <summary><h2>Bienvenido</h2></summary>
 
 ¡Bienvenido al Curso Básico de GitHub Actions de Platzi! en este curso aprenderás a realizar flujos de Integración y Despliegue Continúo (CI/CD) para tus proyectos personales, así como automatizar cualquier proceso que que te ayude a impulsar tu flujo de trabajo :rocket:.
@@ -38,7 +38,7 @@ _Aprende los conceptos básicos para crear tu primer flujo de CI/CD para tus pro
 2. En la nueva pestaña, llena los campos para crear un nuevo repositorio.
    - En owner, elige tu cuenta personal o la de tu organización.
    - Es recomendado dejar el repositorio como público ya que los privados consumen [minutos que pueden ser cobrados](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   ![Create a new repository](https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png)
+     ![Create a new repository](https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png)
 3. Después de que el nuevo repositorio ha sido creado, espera por cerca de 20 segundos; luego, recarga la página. Sigue los pasos que aparezcan en el README del repositorio.
 
 </details>
@@ -52,7 +52,7 @@ _Aprende los conceptos básicos para crear tu primer flujo de CI/CD para tus pro
   TBD-step-1-notes.
 -->
 
-<details id=1>
+<details id=1 open>
 <summary><h2>Paso 1: Crea tu primer workflow file</h2></summary>
 
 _¡Bienvenido al "Curso Básico de GitHub Actions"! :wave:_
@@ -76,9 +76,9 @@ Primero, aprenderemos los conceptos básicos de GitHub Actions
 ### :keyboard: Actividad: Crea un workflow file
 
 1. Abra una nueva pestaña del navegador y siga los pasos de la segunda pestaña mientras lee las instrucciones de esta pestaña.
-1. Cree un Pull Request para ver todos los cambios que realizará a lo largo de este curso. Haga clic en la pestaña *Pull Requests*, haga clic en *New Pull Request*, establezca `base: main` y `compare: aprendiendo-github-actions`.
-1. Vaya a la pestaña *Code*.
-1. En el menú desplegable de la rama *main*, haga clic en la rama *aprendiendo-github-actions*.
+1. Cree un Pull Request para ver todos los cambios que realizará a lo largo de este curso. Haga clic en la pestaña _Pull Requests_, haga clic en _New Pull Request_, establezca `base: main` y `compare: aprendiendo-github-actions`.
+1. Vaya a la pestaña _Code_.
+1. En el menú desplegable de la rama _main_, haga clic en la rama _aprendiendo-github-actions_.
 1. Agrega un script simple en tu lenguaje de programación preferido (Python, JavaScript, Go, Rust, etc.) que imprima un "Hola Mundo".
 1. Navegue a la carpeta `.github/workflows/`, luego seleccione **Add file** y haga clic en **Create new file**.
 1. En el campo **Name your file...**, ingrese `hola-mundo.yml`.
@@ -88,38 +88,39 @@ Primero, aprenderemos los conceptos básicos de GitHub Actions
   <details id=1.1>
   <summary><h3>Ayuda</h2></summary>
 
-  Crea un archivo llamado `hola_mundo.py` en la raiz del repositorio y agrega el siguiente contenido:
-  ```python
-  import os
+Crea un archivo llamado `hola_mundo.py` en la raiz del repositorio y agrega el siguiente contenido:
+
+```python
+import os
 
 
-  def main():
-      nombre = os.getenv("USERNAME")
-      print(f"¡Hola, {nombre} desde GitHub!")
+def main():
+    nombre = os.getenv("USERNAME")
+    print(f"¡Hola, {nombre} desde GitHub!")
 
 
-  if __name__ == "__main__":
-      main()
-  ```
+if __name__ == "__main__":
+    main()
+```
 
-  Agregue el siguiente contenido al archivo `hola-mundo.yml`:
-  ```yaml
-  name: Aprendiendo GitHub Actions
-  run-name: ¡Estoy aprendiendo GitHub Actions!
-  on: [push]
-  jobs:
-    hola-mundo:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Definir variable
-          run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
-        - name: Correr script
-          run: python hola_mundo.py
-  ```
+Agregue el siguiente contenido al archivo `hola-mundo.yml`:
 
-    
+```yaml
+name: Aprendiendo GitHub Actions
+run-name: ¡Estoy aprendiendo GitHub Actions!
+on: [push]
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: Correr script
+        run: python hola_mundo.py
+```
+
   </details>
 
 </details>
@@ -149,7 +150,7 @@ Ahora que conoces los componentes básicos de un workflow en GitHub Actions pode
 
 ### :keyboard: Actividad: Expermienta con los distintos Triggers
 
-1. Vuelve a la rama en que estabamos trabajando (*aprendiendo-github-actions*).
+1. Vuelve a la rama en que estabamos trabajando (_aprendiendo-github-actions_).
 1. Navegue a la carpeta `.github/workflows/`, luego seleccione **Add file** y haga clic en **Create new file**.
 1. En el campo **Name your file...**, ingrese `triggers.yml`.
 1. Crea un workflow que incluya al menos 3 de los triggers que vimos en la clase.
@@ -214,17 +215,17 @@ Ahora que conoces los componentes básicos de un workflow en GitHub Actions pode
         - name: Correr script
           run: python hola_mundo.py
 
-  ```
-  </details>
+````
+</details>
 
 
 </details>
 
 <!--
-  <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-3-notes.
+<<< Author notes: Step 3 >>>
+Start this step by acknowledging the previous step.
+Define terms and link to docs.github.com.
+TBD-step-3-notes.
 -->
 
 <details id=3 open>
@@ -234,7 +235,7 @@ _¡Buen trabajo usando los distintos eventos para lanzar nuevos workflows! :spar
 
 Ahora que conoces como lanzar distintos workflows con los principales tipos de eventos es importante sacar provecho del uso de _Expresiones_ en nuestros workflow files para obtener mayor versatilidad y opciones.
 
-**¿Qué son las expresiones?**: Es una forma de configurar variables de entorno y acceder al contexto. Usan una sintaxis especial ${{ <expresión> }} 
+**¿Qué son las expresiones?**: Es una forma de configurar variables de entorno y acceder al contexto. Usan una sintaxis especial ${{ <expresión> }}
 
 Puedes combinar valores literales, referencias de contexto y funciones usando operadores o condicionales.
 
@@ -246,39 +247,40 @@ Puedes combinar valores literales, referencias de contexto y funciones usando op
 1. Crea un workflow que incluya al menos 3 expresiones de las vistas en clase.
 1. Espere unos 20 segundos y luego actualice esta página para el siguiente paso.
 
-  <details id=1.1>
-  <summary><h3>Ayuda</h2></summary>
-    
-  Agregue el siguiente contenido al archivo `expresiones.yml`:
-  ```yaml
-  name: Expresiones
-  run-name: ¡Estoy aprendiendo a usar Expresiones!
-  on:
-    workflow_dispatch:
-      inputs:
-        edad:
-          description: 'Edad'
-          required: true
-          type: integer
-        nombre:
-          description: 'Tu nombre'
-          required: true
-          default: 'Juan'
-          type: string
-  jobs:
-    mayor:
-      if: ${{ inputs.edad >= 18 }} 
-      runs-on: ubuntu-latest
-      steps:
-        - name: Correr script
-          run: echo ${{ inputs.nombre }} es mayor de edad
-    menor:
-      if: ${{ inputs.edad < 18 }} 
-      runs-on: ubuntu-latest
-      steps:
-        - name: Correr script
-          run: echo ${{ inputs.nombre }} es menor de edad
-  ```
+<details id=1.1>
+<summary><h3>Ayuda</h2></summary>
+
+Agregue el siguiente contenido al archivo `expresiones.yml`:
+```yaml
+name: Expresiones
+run-name: ¡Estoy aprendiendo a usar Expresiones!
+on:
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: integer
+      nombre:
+        description: 'Tu nombre'
+        required: true
+        default: 'Juan'
+        type: string
+jobs:
+  mayor:
+    if: ${{ inputs.edad >= 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{ inputs.nombre }} es mayor de edad
+  menor:
+    if: ${{ inputs.edad < 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{ inputs.nombre }} es menor de edad
+````
+
   </details>
 
 </details>
@@ -312,7 +314,7 @@ Los más usados son:
 
 ### :keyboard: Actividad: Usa los diferentes contextos
 
-1. Vuelve a la rama en que estabamos trabajando (*aprendiendo-github-actions*).
+1. Vuelve a la rama en que estabamos trabajando (_aprendiendo-github-actions_).
 1. Navegue a la carpeta `.github/workflows/`, luego seleccione **Add file** y haga clic en **Create new file**.
 1. En el campo **Name your file...**, ingrese `contextos.yml`.
 1. Crea un workflow que incluya el uso de alguno de los contextos que vimos en clase.
@@ -355,7 +357,7 @@ El uso de variables de entorno es lo único que te falta por aprender de los pri
 
 ### :keyboard: Actividad: Usa variables de entorno en tu workflow
 
-1. Vuelve a la rama en que estabamos trabajando (*aprendiendo-github-actions*).
+1. Vuelve a la rama en que estabamos trabajando (_aprendiendo-github-actions_).
 1. Navegue a la carpeta `.github/workflows/`, luego seleccione **Add file** y haga clic en **Create new file**.
 1. En el campo **Name your file...**, ingrese `variables.yml`.
 1. Crea un workflow que incluya el uso de variables.

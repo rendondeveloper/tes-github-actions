@@ -1,0 +1,31 @@
+name: Aprendiendo a poner varios triggers name #Nombre del workflow
+run-name: Aprendiendo a poner varios triggers name-runner
+on:
+  push:
+    branches:
+      - 'main'
+      - 'feature/**'
+      - 'bugfixing/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - 'main'
+      - 'feature/**'
+      - 'bugfixing/**'
+    paths:
+      - '**.kt'
+  issues:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  hola-mundo: #Nombre del job
+    runs-on: ubuntu-latest #Maquina en la que correrá
+    steps: #Lista de steps del job hola-mundo
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run hola-mundo
+        run: node hola-mundo.js
