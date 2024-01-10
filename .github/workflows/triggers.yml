@@ -1,13 +1,13 @@
 name: Aprendiendo a poner varios triggers name #Nombre del workflow
 run-name: Aprendiendo a poner varios triggers name-runner
 on:
-  pull_request:
+  push:
     branches:
       - feature/test-action-1
 
 jobs:
   first-job: #Nombre del job
-    if: ${{ github.event_name != 'pull_request' }}
+    if: ${{ github.event_name != 'push' }}
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: Checkout
@@ -15,7 +15,7 @@ jobs:
       - name: Definir variable job
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
   second-job:
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
