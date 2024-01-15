@@ -1,6 +1,6 @@
 name: Contexto
 run-name: ¡Estoy aprendiendo a usar el contexto!
-on: push
+on: [push, pull_request]
 jobs:
   name: job-kike
   check-main:
