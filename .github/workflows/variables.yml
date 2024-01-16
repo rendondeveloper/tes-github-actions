@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saludar
-        run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA y usando variables de entorno ${vars.NAME_REAL_2}"
+        run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA y usando variables de entorno ${{vars.NAME_REAL_2}}"
         env:
             NOMBRE: Kike2
