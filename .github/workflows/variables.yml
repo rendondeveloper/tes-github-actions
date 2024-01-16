@@ -1,4 +1,4 @@
-name: Saludo usando variables
+name: Saludo usando variables y de entorno
 run-name: ¡Estoy aprendiendo a usar el varibale de entorno!
 on:
   push
@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saludar
-        run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA"
+        run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA y usando variables de entorno ${{NAME_REAL}}"
         env:
             NOMBRE: Kike2
